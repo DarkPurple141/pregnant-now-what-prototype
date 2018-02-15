@@ -1,5 +1,13 @@
 <template lang="html">
    <header>
+      <nav @click="prev()">
+         <div class="icon-container icon-bottom icon-left">
+            <i class="material-icons arrow">brightness_1</i>
+         </div>
+         <div class="icon-container icon-top icon-left">
+            <i class="material-icons arrow">chevron_left</i>
+         </div>
+      </nav>
       <div class="current">Current: {{ period }}</div>
       <nav @click="next()">
          <div class="icon-container icon-bottom">
@@ -16,7 +24,8 @@
 export default {
    props: {
       period: String,
-      next: Function
+      next: Function,
+      prev: Function
    }
 }
 </script>
@@ -26,20 +35,24 @@ export default {
 @import '../assets/icon.less';
 
 header {
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: 0px 20px;
   height: 56px;
-  background-color: @secondary-color-light;
+  background-color: @primary-color;
   color: @grey;
   border-bottom: 1px solid @border;
 }
 
+nav {
+   height: 100%;
+   position: relative;
+   width: 10%;
+}
+
 .icon-container {
-   top: 9px;
+   top: 8px;
    right: 10px;
 }
 
@@ -47,12 +60,16 @@ header {
    color: black;
 }
 
+.icon-left {
+   left: 10px;
+}
+
 .arrow {
    font-size: 1.5em;
 }
 
-header nav {
-   padding: 5px 0px;
+.current {
+   width: 80%;
 }
 
 header div {
@@ -63,8 +80,4 @@ header div {
   padding: 5px 0px;
 }
 
-.logo {
-   width: 50%;
-   background-color: @secondary-color-light;
-}
 </style>

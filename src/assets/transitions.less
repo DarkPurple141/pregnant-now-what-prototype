@@ -1,7 +1,30 @@
 .component-fade-enter-active, .component-fade-leave-active {
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 .component-fade-enter, .component-fade-leave-to
 /* .component-fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-enter-active, .slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(500px);
+}
+
+.slide-enter {
+  transform: translateX(-100%);
+}
+
+.slide-enter-to, .slide-leave {
+  transform: translateX(0);
+}
+
+.slide-leave-to {
+   transform: translateX(100%);
 }

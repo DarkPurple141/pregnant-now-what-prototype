@@ -1,13 +1,16 @@
 <template>
+
   <main class="main">
     <app-header
       :period="activeCard.period"
-      :next="nextCard"/>
-    <transition name="component-fade">
-       <card :card="activeCard" :key="active"/>
-    </transition>
+      :next="nextCard"
+      :prev="prevCard"/>
+      <transition name='component-fade' :key="active">
+         <card :card="activeCard" :key="active"/>
+      </transition>
     <!--  <div>HELLO</div>  -->
   </main>
+
 </template>
 
 <script>
@@ -27,7 +30,7 @@ export default {
       active: 0,
       cards: [
          {
-            period: "5-6 Weeks",
+            period: "Weeks 5-6",
             content: {
                need: {
                   words: [
@@ -68,7 +71,7 @@ export default {
             }
          },
          {
-            period: "6-9 Weeks",
+            period: "Weeks 6-9",
             content: {
                need: {
                   words: [
@@ -118,6 +121,12 @@ export default {
             return;
          }
          this.active = this.active + 1
+      },
+      prevCard() {
+         if (this.active <= 0) {
+            return;
+         }
+         this.active = this.active - 1
       }
   },
   computed: {

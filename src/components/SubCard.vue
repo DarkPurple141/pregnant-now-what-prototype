@@ -2,7 +2,7 @@
    <section
       class="card-article-content card">
       <h3>{{ item.header }}</h3>
-      <p>{{ item.description }}</p>
+      <p>{{ ellipsise(item.description) }}</p>
       <div @click="toggle(item)" class="icon-container">
          <i class="material-icons icon">keyboard_arrow_right</i>
       </div>
@@ -10,10 +10,16 @@
 </template>
 
 <script>
+import { ellipsise } from '../helpers.js'
+
 export default {
    props: {
       item: Object,
       toggle: Function
+   },
+
+   methods: {
+      ellipsise
    }
 }
 </script>
@@ -30,7 +36,7 @@ h3 {
 }
 
 .icon-container {
-   right: -50px;
+   right: -60px;
    top: 40%;
 }
 

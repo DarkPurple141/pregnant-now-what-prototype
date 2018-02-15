@@ -2,7 +2,7 @@
 <transition name="component-fade" mode="out-in">
    <section v-if="!toggle.state" :key="'Main'">
       <article class="card-article card">
-         <h2 class="card-article-header">What I need to do</h2>
+         <h2 class="card-article-header">Before my appointment</h2>
          <sub-card :toggle="toggleTarget" v-for="item in card.content.need.words" :key="item.header" :item="item"/>
       </article>
       <article class="card-article card">
@@ -10,7 +10,7 @@
          <sub-card :toggle="toggleTarget" v-for="item in card.content.medico.words" :key="item.header" :item="item"/>
       </article>
       <article class="card-article card">
-         <h2 class="card-article-header">Ahead of my next appointment</h2>
+         <h2 class="card-article-header">After my appointment</h2>
          <sub-card :toggle="toggleTarget" v-for="item in card.content.todo.words" :key="item.header" :item="item"/>
       </article>
    </section>
