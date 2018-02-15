@@ -1,54 +1,47 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
-    </main>
+    <router-view></router-view>
+    <mobile-footer/>
   </div>
 </template>
 
 <script>
+import MobileFooter from '@/components/MobileFooter'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: { MobileFooter }
 }
 </script>
 
-<style>
-body {
-  margin: 0;
-}
+<style lang='less'>
+@import './assets/colors.less';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: @primary-text;
+  height: 100%;
 }
 
 main {
-  text-align: center;
-  margin-top: 40px;
+   padding-bottom: 60px;
 }
 
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
+*, *:after, *:before {
+   margin: 0;
+   padding: 0;
 }
 
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
+h1, h2, h3, h4, h5, h6 {
+   color: @primary-text;
 }
+
+p {
+   font-family: 'San Francisco', 'Helvetica Neue';
+   line-height: 1.8;
+   color: @secondary-text;
+}
+
 </style>
