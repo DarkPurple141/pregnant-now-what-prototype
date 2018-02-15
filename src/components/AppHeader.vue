@@ -51,13 +51,17 @@ nav {
    width: 10%;
 }
 
+.icon-bottom {
+   color: @primary-color-light;
+}
+
 .icon-container {
-   top: 8px;
+   top: 7px;
    right: 10px;
 }
 
 .icon-top {
-   color: black;
+   color: @grey-light;
 }
 
 .icon-left {
@@ -70,6 +74,7 @@ nav {
 
 .current {
    width: 80%;
+   padding: 0 25px;
 }
 
 header div {
@@ -77,7 +82,7 @@ header div {
   line-height: 1;
   letter-spacing: .02em;
   font-weight: 400;
-  padding: 5px 0px;
+  padding: 5px;
 }
 
 </style>

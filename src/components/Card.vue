@@ -1,33 +1,34 @@
 <template lang="html">
-<transition name="component-fade" mode="out-in">
-   <section v-if="!toggle.state" :key="'Main'">
-      <article class="card-article card">
-         <h2 class="card-article-header">Before my appointment</h2>
-         <sub-card :toggle="toggleTarget" v-for="item in card.content.need.words" :key="item.header" :item="item"/>
-      </article>
-      <article class="card-article card">
-         <h2 class="card-article-header">What to expect at my appointment</h2>
-         <sub-card :toggle="toggleTarget" v-for="item in card.content.medico.words" :key="item.header" :item="item"/>
-      </article>
-      <article class="card-article card">
-         <h2 class="card-article-header">After my appointment</h2>
-         <sub-card :toggle="toggleTarget" v-for="item in card.content.todo.words" :key="item.header" :item="item"/>
-      </article>
-   </section>
-   <section v-else  :key="'More'">
-      <article class="card-article card">
-         <h2 class="card-article-header">{{ toggle.target.header }}</h2>
-         <p>{{toggle.target.description}}</p>
-         <div class="icon-container" @click="toggleTarget()">
-            <i class="material-icons icon">keyboard_arrow_left</i>
-         </div>
-      </article>
-   </section>
-</transition>
+   <transition name="component-fade" mode="out-in">
+      <section v-if="!toggle.state" :key="'Main'">
+         <article class="card-article card">
+            <h2 class="card-article-header">Before my appointment</h2>
+            <sub-card :toggle="toggleTarget" v-for="item in card.content.need.words" :key="item.header" :item="item"/>
+         </article>
+         <article class="card-article card">
+            <h2 class="card-article-header">What to expect at my appointment</h2>
+            <sub-card :toggle="toggleTarget" v-for="item in card.content.medico.words" :key="item.header" :item="item"/>
+         </article>
+         <article class="card-article card">
+            <h2 class="card-article-header">After my appointment</h2>
+            <sub-card :toggle="toggleTarget" v-for="item in card.content.todo.words" :key="item.header" :item="item"/>
+         </article>
+      </section>
+      <section v-else :key="'More'">
+         <article class="card-article card">
+            <h2 class="card-article-header">{{ toggle.target.header }}</h2>
+            <p>{{toggle.target.description}}</p>
+            <circle-icon @click.native="toggleTarget()">
+               <i class="material-icons icon-size">replay</i>
+            </circle-icon>
+         </article>
+      </section>
+   </transition>
 </template>
 
 <script>
 import SubCard from '@/components/SubCard'
+import CircleIcon from '@/components/CircleIcon'
 
 export default {
    props: {
@@ -47,7 +48,8 @@ export default {
    },
 
    components: {
-      SubCard
+      SubCard,
+      CircleIcon
    },
 
    methods: {
@@ -98,10 +100,6 @@ export default {
    border-bottom: 3px solid @primary-color-light;
 }
 
-.icon-container {
-   left: 40%;
-   top: 50%;
-}
 
 article:nth-child(even) {
    background-color: @grey-light;
