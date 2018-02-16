@@ -1,6 +1,6 @@
 <template lang="html">
    <header>
-      <div class="current">{{ location }}</div>
+      <div class="current"><b>PNW</b> / {{ location }}</div>
    </header>
 </template>
 
@@ -22,7 +22,7 @@ header {
   justify-content: flex-start;
   height: 30px;
   background-color: @primary-color;
-  color: @grey;
+  color: @grey-light;
   border-bottom: 1px solid @border;
 }
 
@@ -32,7 +32,6 @@ header {
 }
 
 header div {
-  font-size: 20px;
   line-height: 1;
   letter-spacing: .02em;
   font-weight: 400;

@@ -63,8 +63,7 @@ export default {
 
    watch: {
             '$route' (to, from) {
-                //on route change re run: onCreated
-                this.toggle.state = false
+               this.toggle.state = false
             }
         }
 }

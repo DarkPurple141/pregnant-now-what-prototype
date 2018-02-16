@@ -3,7 +3,7 @@
      <nav>
         <ul class="nav-buttons">
            <li class="nav-button"
-           @click="$router.push({ name: button.name })"
+           @click="$router.push({ name: button.name, query: { d: Date.now() } })"
            :class="{ 'nav-button-active':  activeRoute(button.name)}"
            v-for="button in buttons">
              <div class="nav-button-container">
@@ -59,11 +59,7 @@ export default {
    justify-content: center;
    width: 25%;
 }
-/*
-.nav-button:nth-child(-n+3) {
-   border-right: 0.5px solid white;
-}
-*/
+
 .nav-button:hover, .nav-button:focus {
    background-color: @primary-color-light;
    color: @grey;

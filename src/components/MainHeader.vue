@@ -64,6 +64,10 @@ nav {
    color: @grey-light;
 }
 
+.icon-top:hover {
+   color: @grey;
+}
+
 .icon-left {
    left: 10px;
 }
