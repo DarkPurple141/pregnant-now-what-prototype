@@ -14,13 +14,13 @@
             <sub-card :toggle="toggleTarget" v-for="item in card.content.todo.words" :key="item.header" :item="item"/>
          </article>
       </section>
-      <section v-else :key="'More'">
-         <article class="card-article card">
+      <section class="card-reverse card-article" v-else :key="'More'">
+         <article class="card-article-content card-reverse-article">
             <h2 class="card-article-header">{{ toggle.target.header }}</h2>
             <p>{{toggle.target.description}}</p>
-            <circle-icon @click.native="toggleTarget()">
-               <i class="material-icons icon-size">replay</i>
-            </circle-icon>
+            <div @click="toggleTarget()" class="icon-container">
+               <i class="material-icons icon">keyboard_arrow_left</i>
+            </div>
          </article>
       </section>
    </transition>
@@ -28,7 +28,6 @@
 
 <script>
 import SubCard from '@/components/SubCard'
-import CircleIcon from '@/components/CircleIcon'
 
 export default {
    props: {
@@ -48,8 +47,7 @@ export default {
    },
 
    components: {
-      SubCard,
-      CircleIcon
+      SubCard
    },
 
    methods: {
@@ -61,7 +59,14 @@ export default {
 
          this.toggle.state = !this.toggle.state
       }
-   }
+   },
+
+   watch: {
+            '$route' (to, from) {
+                //on route change re run: onCreated
+                this.toggle.state = false
+            }
+        }
 }
 </script>
 
@@ -69,35 +74,17 @@ export default {
 @import '../assets/colors.less';
 @import '../assets/transitions.less';
 @import '../assets/icon.less';
+@import '../assets/cards.less';
 
-.card {
-   display: flex;
-   align-items: flex-start;
-   justify-content: flex-start;
-   flex-direction: column;
+
+.icon-container {
+   left: 5%;
+   top: 30%;
 }
 
-.card-article {
-   padding: 20px;
-   border-top: 1px solid @border;
-   min-height: 50vh;
-   margin: auto;
-}
-
-.card-article-content {
-   margin: 10px 0px;
-   padding: 10px 0px;
-   width: 80%;
-   border-bottom: 1px solid @border;
-}
-
-.card-article-content:last-child {
-   border-bottom: none;
-}
-
-.card-article-header {
-   margin: 10px 0px;
-   border-bottom: 3px solid @primary-color-light;
+.card-reverse-article {
+   margin: 0;
+   padding: 0;
 }
 
 

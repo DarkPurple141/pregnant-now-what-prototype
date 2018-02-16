@@ -1,27 +1,25 @@
 <template>
-
   <main class="main">
-    <app-header
+    <main-header
       :period="activeCard.period"
       :next="nextCard"
       :prev="prevCard"/>
       <transition name='component-fade' :key="active">
          <card :card="activeCard" :key="active"/>
       </transition>
-    <!--  <div>HELLO</div>  -->
   </main>
 
 </template>
 
 <script>
 import Card from '@/components/Card'
-import AppHeader from '@/components/AppHeader'
+import MainHeader from '@/components/MainHeader'
 
 export default {
   name: 'hello',
 
   components: {
-    AppHeader,
+    MainHeader,
     Card
   },
 

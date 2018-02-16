@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <mobile-header :location="$route.name"/>
     <router-view></router-view>
     <mobile-footer/>
   </div>
@@ -7,10 +8,11 @@
 
 <script>
 import MobileFooter from '@/components/MobileFooter'
+import MobileHeader from '@/components/MobileHeader'
 
 export default {
   name: 'app',
-  components: { MobileFooter }
+  components: { MobileFooter, MobileHeader }
 }
 </script>
 

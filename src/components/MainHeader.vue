@@ -40,7 +40,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   height: 56px;
-  background-color: @primary-color;
+  background-color: @primary-color-light;
   color: @grey;
   border-bottom: 1px solid @border;
 }
@@ -52,7 +52,7 @@ nav {
 }
 
 .icon-bottom {
-   color: @primary-color-light;
+   color: @primary-color;
 }
 
 .icon-container {

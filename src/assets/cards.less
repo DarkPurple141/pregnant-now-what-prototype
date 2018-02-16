@@ -1,0 +1,38 @@
+@import 'colors.less';
+
+.card {
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-direction: column;
+}
+
+.card-reverse {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+}
+
+.card-article-content {
+   margin: 10px 0px;
+   padding: 10px 0px;
+   width: 80%;
+   border-bottom: 1px solid @border;
+}
+
+.card-article {
+   padding: 20px;
+   border-top: 1px solid @border;
+   min-height: 50vh;
+   margin: auto;
+}
+
+.card-article-content:last-child {
+   border-bottom: none;
+}
+
+.card-article-header {
+   margin: 10px 0px;
+   border-bottom: 3px solid @primary-color-light;
+}

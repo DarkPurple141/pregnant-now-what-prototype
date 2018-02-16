@@ -2,7 +2,10 @@
    <footer>
      <nav>
         <ul class="nav-buttons">
-           <li class="nav-button" :class="{ 'nav-button-active':  activeRoute(button.name)}" v-for="button in buttons">
+           <li class="nav-button"
+           @click="$router.push({ name: button.name })"
+           :class="{ 'nav-button-active':  activeRoute(button.name)}"
+           v-for="button in buttons">
              <div class="nav-button-container">
                 <i class="material-icons">{{ button.icon }}</i>
              </div>
@@ -30,7 +33,7 @@ export default {
 
    methods: {
       activeRoute(name) {
-         return name == "This Week"
+         return name == this.$route.name
       }
    }
 }
