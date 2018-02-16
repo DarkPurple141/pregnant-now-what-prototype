@@ -1,5 +1,11 @@
 <template lang="html">
-   <main>
+   <main class="content-area">
+      <section class="topic-header">
+         {{ $route.name }}
+      </section>
+      <section class="topic-content">
+         <Article v-for="(post, index) in posts" :key="index" :content="post"/>
+      </section>
    </main>
 </template>
 
@@ -9,6 +15,10 @@ import Article from '@/components/Article'
 export default {
    components: {
       Article
+   },
+
+   props: {
+      article: String
    },
 
    data() {
@@ -31,5 +41,13 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+
+.content-area {
+   width: 95%;
+   margin: 0 auto;
+}
+.topic-header {
+
+}
 </style>

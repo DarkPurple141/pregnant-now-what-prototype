@@ -52,7 +52,7 @@ export default {
 }
 
 .nav-button {
-   color: @grey-light;
+   color: @icons;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -62,17 +62,17 @@ export default {
 
 .nav-button:hover, .nav-button:focus {
    background-color: @primary-color-light;
-   color: @grey;
+   color: @grey-light;
 }
 
 .nav-button-active {
    background-color: @primary-color-light;
-   color: @grey;
+   color: @grey-light;
 }
 
 footer {
    width: 100%;
-   background-color: @primary-color;
+   background-color: @grey;//@secondary-color-light;//;@primary-color-light;
    position: fixed;
    bottom: 0;
    height: 70px;
