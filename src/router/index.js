@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Main from '@/pages/Main'
 import Info from '@/pages/Info'
 import Entry from '@/pages/Entry'
+import store from '../store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -43,3 +44,13 @@ export default new Router({
     },
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (store.getters.isLoggedIn || to.name == 'Entry') {
+    next()
+  } else {
+    next({path: '/login'})
+  }
+})
+
+export default router

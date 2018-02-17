@@ -1,8 +1,8 @@
 <template lang="html">
-<header class="banner">
-   <h1>{{ title }}</h1>
-   <h3>{{ subtitle }}</h3>
-</header>
+   <header class="banner">
+      <h1>{{ title }}</h1>
+      <h3>{{ subtitle }}</h3>
+   </header>
 </template>
 
 <script>
@@ -12,8 +12,14 @@ export default {
          title: "Pregnant. Now What?!",
          subtitle: "An application supported by NSW Health."
       }
-   }
+   },
 
+   mounted() {
+      setTimeout(() => {
+         this.$store.commit('login')
+         this.$router.push({ name: 'This Week'})
+      }, 2000)
+   }
 }
 </script>
 
@@ -21,7 +27,10 @@ export default {
 @import '../assets/colors.less';
 
 .banner {
-   background-image: linear-gradient(fade(@primary-color,10%),fade(@primary-color,30%)),url(../../static/pregnant-750w-bw.jpeg);
+   background-image: linear-gradient(
+      fade(@primary-color-light,60%),
+      fade(black,100%)),
+      url(../../static/pregnant-750w-bw.jpeg);
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover, cover;
@@ -33,13 +42,17 @@ export default {
 }
 
 h1, h3 {
-   padding: 5%;
    width: 80%;
    color: @grey-light;
-   background-color: fade(@primary-color-light, 90%);
+}
+
+h3 {
+   padding: 10%;
+   background-color: @primary-color;
 }
 
 h1 {
+   padding: 5%;
    font-size: 4em;
 }
 

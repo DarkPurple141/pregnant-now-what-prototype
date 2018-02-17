@@ -1,9 +1,11 @@
 <template>
-  <div id="app">
-    <mobile-header v-if="isHeaderRoute($route.name)" :location="$route.name"/>
-    <router-view></router-view>
-    <mobile-footer v-if="$route.name != 'Entry'"/>
-  </div>
+<div id="app">
+    <mobile-header key="header" v-if="isHeaderRoute($route.name)" :location="$route.name"/>
+    <transition-group name='fade'>
+       <router-view key="view"></router-view>
+    </transition-group>
+    <mobile-footer key="footer" v-if="$route.name != 'Entry'"/>
+</div>
 </template>
 
 <script>
@@ -24,6 +26,7 @@ export default {
 
 <style lang='less'>
 @import './assets/colors.less';
+@import './assets/transitions.less';
 
 *, *:after, *:before {
    margin: 0;
@@ -36,7 +39,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: @primary-text;
   font-size: 16px;
-  height: 100vh;
+  height: 100%;
 }
 
 main {
