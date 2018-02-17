@@ -47,8 +47,12 @@ export default {
    display: flex;
    flex-direction: row;
    width: 100%;
-   height: 70px;
+   height: 60px;
    border-top: 1px solid @border;
+}
+
+.nav-button-container {
+   line-height: 1;
 }
 
 .nav-button {
@@ -75,6 +79,6 @@ footer {
    background-color: @grey;//@secondary-color-light;//;@primary-color-light;
    position: fixed;
    bottom: 0;
-   height: 70px;
+   height: 60px;
 }
 </style>

@@ -39,7 +39,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: 56px;
+  height: 50px;
   background-color: @primary-color-light;
   color: @grey;
   border-bottom: 1px solid @border;
@@ -56,7 +56,7 @@ nav {
 }
 
 .icon-container {
-   top: 7px;
+   top: 5px;
    right: 10px;
 }
 
