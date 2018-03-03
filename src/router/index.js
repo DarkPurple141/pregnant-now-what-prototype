@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Main from '@/pages/Main'
 import Info from '@/pages/Info'
 import Entry from '@/pages/Entry'
+import Schedule from '@/pages/Schedule'
 import store from '../store'
 
 Vue.use(Router)
@@ -17,7 +18,7 @@ const router = new Router({
     {
       path: '/schedule',
       name: 'Schedule',
-      component: Main
+      component: Schedule
     },
     {
       path: '/info',
