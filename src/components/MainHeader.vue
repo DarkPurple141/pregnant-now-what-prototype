@@ -1,18 +1,20 @@
 <template lang="html">
    <header>
       <nav @click="prev()">
+         <!--
          <div class="icon-container icon-bottom icon-left">
             <i class="material-icons arrow">brightness_1</i>
-         </div>
+         </div>-->
          <div class="icon-container icon-top icon-left">
             <i class="material-icons arrow">chevron_left</i>
          </div>
       </nav>
-      <div class="current">Current: {{ period }}</div>
+      <div class="current">Current: Weeks {{ period.start }}-{{ period.end }}</div>
       <nav @click="next()">
+         <!--
          <div class="icon-container icon-bottom">
             <i class="material-icons arrow">brightness_1</i>
-         </div>
+         </div>-->
          <div class="icon-container icon-top">
             <i class="material-icons arrow">chevron_right</i>
          </div>
