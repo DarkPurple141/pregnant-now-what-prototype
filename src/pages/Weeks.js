@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import Month from '../components/Month';
+
 import {
   StyleSheet,
-  Text,
-  View
+  ScrollView
 } from 'react-native';
+
+import { List, ListItem } from 'react-native-elements';
 
 export default class Weeks extends Component {
   render() {
     return (
-      <View style={styles.main}>
-         <View style={styles.container}>
-           <Text>
-            Weeks!
-           </Text>
-         </View>
-      </View>
+      <ScrollView>
+        {[1,2,3,4,5].map((data) => (
+           <Month
+            month={data}
+            key={data} />
+        ))}
+      </ScrollView>
     );
   }
 }
