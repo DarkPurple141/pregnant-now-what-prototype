@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 
 export default class Article extends Component {
   render() {
     return (
-      <View style={styles.main}>
+      <ScrollView style={styles.main}>
          <View style={styles.container}>
            <Text>
-            Article
+            { this.props.navigation.state.params.title }
            </Text>
          </View>
-      </View>
-    );
+      </ScrollView>
+    )
   }
 }
 

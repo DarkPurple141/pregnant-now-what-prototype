@@ -2,7 +2,7 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Home from '../pages/Home';
+import Main from '../pages/Main';
 import Weeks from '../pages/Weeks';
 import Article from '../pages/Article';
 
@@ -22,10 +22,10 @@ export const FeedStack = StackNavigator({
 });
 
 export const Tabs = TabNavigator({
-     Home: {
-       screen: Home,
+     Main: {
+       screen: Main,
        navigationOptions: {
-         tabBarLabel: 'Home',
+         tabBarLabel: 'This Week',
          tabBarIcon: ({ tintColor }) =>
             <Icon name="home" size={36} color={tintColor} />,
        },

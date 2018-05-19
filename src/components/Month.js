@@ -3,25 +3,23 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  TouchableOpacity
 } from 'react-native';
 
 export default class Month extends Component {
 
-   moreInfo = (article) => {
+   moreInfo(article) {
      this.props.navigation.navigate('Article', {title: article.title});
    }
 
   render() {
     return (
-       <View style={styles.container}>
-        <Text
-         style={styles.welcome}
-         onPress={() => this.moreInfo({ title: "Heyo" })}
-         >
+       <TouchableOpacity style={styles.container}
+             onPress={() => this.moreInfo({ title: "Buckle up" })}>
+         <Text style={styles.welcome}>
           { monthToString(this.props.month) }
-        </Text>
-       </View>
+         </Text>
+       </TouchableOpacity>
     );
   }
 }

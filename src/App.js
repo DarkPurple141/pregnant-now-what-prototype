@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { Tabs, FeedStack } from './config/router';
+import { Tabs } from './config/router';
 
 
 class App extends Component {
