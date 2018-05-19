@@ -5,13 +5,13 @@ import {
   View
 } from 'react-native';
 
-export default class Home extends Component {
+export default class Article extends Component {
   render() {
     return (
       <View style={styles.main}>
          <View style={styles.container}>
            <Text>
-            Home
+            Article
            </Text>
          </View>
       </View>

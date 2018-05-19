@@ -3,8 +3,9 @@ import {
 } from 'react-native';
 
 export const text = StyleSheet.create({
-  main: {
-   flex: 1
+  root: {
+   fontFamily: 'Helvetica Neue',
+   fontSize: 14
   },
   container: {
     flex: 8,

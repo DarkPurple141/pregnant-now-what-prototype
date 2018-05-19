@@ -11,11 +11,12 @@ import { List, ListItem } from 'react-native-elements';
 export default class Weeks extends Component {
   render() {
     return (
-      <ScrollView>
-        {[1,2,3,4,5].map((data) => (
+      <ScrollView style={styles.main}>
+        {[1,2,3,4,5,6,7,8].map((data) => (
            <Month
             month={data}
-            key={data} />
+            key={data}
+            navigation={this.props.navigation} />
         ))}
       </ScrollView>
     );
@@ -24,12 +25,12 @@ export default class Weeks extends Component {
 
 const styles = StyleSheet.create({
   main: {
-   flex: 1
+   paddingTop: 10
   },
   container: {
     flex: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: 'salmon'
   }
 });

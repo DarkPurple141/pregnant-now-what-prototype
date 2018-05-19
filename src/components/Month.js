@@ -7,20 +7,30 @@ import {
 } from 'react-native';
 
 export default class Month extends Component {
+
+   moreInfo = (article) => {
+     this.props.navigation.navigate('Article', {title: article.title});
+   }
+
   render() {
     return (
-        <Text style={styles.welcome}>
+       <View style={styles.container}>
+        <Text
+         style={styles.welcome}
+         onPress={() => this.moreInfo({ title: "Heyo" })}
+         >
           { monthToString(this.props.month) }
         </Text>
+       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    margin: 20,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
