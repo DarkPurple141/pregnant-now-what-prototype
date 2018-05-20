@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
-  View,
-  Text,
-  StyleSheet
+  TouchableOpacity
 } from 'react-native';
 
-import CardHeader from './CardHeader';
-import CardText from './CardText';
+import CardHeader from '@components/CardHeader';
+import CardText from '@components/CardText';
+import TextStyles from '@styles/Text';
+import SectionStyles from '@styles/Section';
 
 export default class Card extends Component {
 
   render() {
     return (
-       <View style={styles.container}>
-         <CardHeader title={ this.props.card.words[0].title} />
-         <CardText   content={ this.props.card.words[0].body } />
-       </View>
+       <TouchableOpacity style={SectionStyles.card}>
+         <CardHeader style={[ TextStyles.root, TextStyles.h2 ]}
+                     title={ this.props.card.title} />
+         <CardText   style={[ TextStyles.root, TextStyles.p ]}
+                     content={ this.props.card.body } />
+       </TouchableOpacity>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    margin: 20,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF',
-  }
-});
+Card.propTypes = {
+   card: PropTypes.shape({
+      title: PropTypes.string,
+      body:  PropTypes.string
+   })
+}

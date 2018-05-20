@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Month from '../components/Month';
+import Month from '@components/Month';
 
 import {
   StyleSheet,

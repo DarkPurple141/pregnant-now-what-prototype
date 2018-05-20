@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 
 import {
   View,
-  Text,
-  StyleSheet
+  Text
 } from 'react-native';
 
-export default class CardHeader extends Component {
+export default class SectionHeader extends Component {
 
   render() {
     return (
-       <View>
+       <View style={ this.props.border }>
          <Text style={ this.props.style }>{ this.props.title }</Text>
        </View>
     );
   }
 }
 
-CardHeader.propTypes = {
+SectionHeader.propTypes = {
    title: PropTypes.string,
-   style: Text.propTypes.style
+   style: Text.propTypes.style,
+   border: View.propTypes.style
 }

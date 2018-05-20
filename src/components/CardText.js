@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -10,17 +11,22 @@ export default class CardText extends Component {
   render() {
     return (
        <View style={styles.container}>
-         <Text>{ this.props.content }</Text>
+         <Text style={ this.props.style }>
+            { this.props.content }
+         </Text>
        </View>
     );
   }
 }
 
+CardText.propTypes = {
+   content: PropTypes.string,
+   style: Text.propTypes.style
+}
+
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF',
   }
 });

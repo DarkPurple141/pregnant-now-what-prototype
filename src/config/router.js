@@ -2,9 +2,9 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Main from '../pages/Main';
-import Weeks from '../pages/Weeks';
-import Article from '../pages/Article';
+import Main from '@pages/Main';
+import Weeks from '@pages/Weeks';
+import Article from '@pages/Article';
 
 export const FeedStack = StackNavigator({
   Weeks: {
@@ -27,8 +27,8 @@ export const Tabs = TabNavigator({
        navigationOptions: {
          tabBarLabel: 'This Week',
          tabBarIcon: ({ tintColor }) =>
-            <Icon name="home" size={36} color={tintColor} />,
-       },
+            <Icon name="update" size={36} color={tintColor} />,
+       }
      },
      Weeks: {
        screen: FeedStack,
@@ -36,15 +36,15 @@ export const Tabs = TabNavigator({
          tabBarLabel: 'Weeks',
          tabBarIcon: ({ tintColor }) =>
             <Icon name="account-circle" size={36} color={tintColor} />
-       },
+       }
      },
-     Stuff: {
+     Info: {
        screen: Weeks,
        navigationOptions: {
          tabBarLabel: 'Info',
          tabBarIcon: ({ tintColor }) =>
             <Icon name="info" size={36} color={tintColor} />
-       },
+       }
      }
   },
   {
@@ -55,3 +55,15 @@ export const Tabs = TabNavigator({
      }
   }
 )
+
+export const Root = StackNavigator({
+   Tabs: {
+     screen: Tabs,
+     navigationOptions: ({ navigation }) => ({
+        title: 'App the Duff',//`${navigation.state.routes[navigation.state.index].routeName}`
+        headerStyle: {
+           backgroundColor: '#ff616f'
+        }
+     })
+  }
+})
