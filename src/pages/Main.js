@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  ScrollView
+  ScrollView,
+  Button,
+  Text
 } from 'react-native';
+
+import {
+   Header,
+   Icon
+} from 'react-native-elements';
 
 import { cards } from '../config/data';
 import Section from '@components/Section';
@@ -14,17 +21,31 @@ export default class Main extends Component {
       this.state = { active: 0 };
       this.sections = ['Before my appointment',
                        'At my appointment',
-                       'After my appointment'
-                      ]
+                       'After my appointment']
    }
 
    _sectionTitle(index) {
       return this.sections[index]
    }
 
+   // bound
+   _increaseCount = () => {
+     this.setState({ active: this.state.active + 1 })
+   }
+
+   // bound
+   _decreaseCount = () => {
+      this.setState({ active: this.state.active - 1 })
+   }
+
    render() {
       return (
          <View style={styles.main}>
+            <Header
+               leftComponent={<Icon name="chevron-left" onPress={ this._decreaseCount }/>}
+               centerComponent={{ text: `Week ${cards[this.state.active].period.start}`, style: { color: '#fff' } }}
+               rightComponent={<Icon name="chevron-right" onPress={ this._increaseCount }/>}
+               />
             <ScrollView>
               { cards[this.state.active].content.map((section, index) => (
                  <Section

@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements';
 import Main from '@pages/Main';
 import Weeks from '@pages/Weeks';
 import Article from '@pages/Article';
+import Profile from '@pages/Profile';
 
 export const FeedStack = StackNavigator({
   Weeks: {
@@ -17,12 +18,12 @@ export const FeedStack = StackNavigator({
     screen: Article,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.title}`,
-    }),
+   }),
   },
 });
 
 export const Tabs = TabNavigator({
-     Main: {
+     'This Week': {
        screen: Main,
        navigationOptions: {
          tabBarLabel: 'This Week',
@@ -30,20 +31,20 @@ export const Tabs = TabNavigator({
             <Icon name="update" size={36} color={tintColor} />,
        }
      },
-     Weeks: {
+     Calendar: {
        screen: FeedStack,
        navigationOptions: {
-         tabBarLabel: 'Weeks',
+         tabBarLabel: 'Calendar',
          tabBarIcon: ({ tintColor }) =>
-            <Icon name="account-circle" size={36} color={tintColor} />
+            <Icon name="event-note" size={36} color={tintColor} />
        }
      },
-     Info: {
-       screen: Weeks,
+     Me: {
+       screen: Profile,
        navigationOptions: {
-         tabBarLabel: 'Info',
+         tabBarLabel: 'Me',
          tabBarIcon: ({ tintColor }) =>
-            <Icon name="info" size={36} color={tintColor} />
+            <Icon name="account-circle" size={36} color={tintColor} />
        }
      }
   },
@@ -51,18 +52,25 @@ export const Tabs = TabNavigator({
      tabBarOptions: {
         style: {
           height: 56
-        }
+       },
+       activeTintColor: '#ff616f',
+       labelStyle: {
+          fontSize: 12,
+       },
      }
   }
 )
 
-export const Root = StackNavigator({
+const titles = ["This Week", "Weeks", "More Info"]
+
+export const RootNavigator = StackNavigator({
    Tabs: {
      screen: Tabs,
      navigationOptions: ({ navigation }) => ({
-        title: 'App the Duff',//`${navigation.state.routes[navigation.state.index].routeName}`
+        //title: 'App the Duff', //`${titles[navigation.state.index]}`, //'',
         headerStyle: {
-           backgroundColor: '#ff616f'
+           backgroundColor: '#ff616f',
+           height: 22
         }
      })
   }

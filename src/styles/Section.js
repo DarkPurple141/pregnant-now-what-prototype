@@ -13,7 +13,7 @@ const SectionStyles =  StyleSheet.create({
   card: {
       marginVertical: 10,
       paddingVertical: 10,
-      backgroundColor: '#F5FCFF',
+      //backgroundColor: '#F5FCFF',
   }
 });
 

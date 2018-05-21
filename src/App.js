@@ -5,12 +5,12 @@
  */
 
 import React, { Component } from 'react';
-import { Root } from './config/router';
+import { RootNavigator } from './config/router';
 
 
 class App extends Component {
   render() {
-    return <Root />;
+    return <RootNavigator/>;
   }
 }
 
