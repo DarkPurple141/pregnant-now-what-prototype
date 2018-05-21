@@ -17,7 +17,7 @@ import MainHeader from '@/components/MainHeader'
 import { cards } from '@/content/cards'
 
 export default {
-  name: 'hello',
+  name: 'Main',
 
   components: {
     MainHeader,

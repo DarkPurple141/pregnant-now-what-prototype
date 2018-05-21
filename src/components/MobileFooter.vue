@@ -75,6 +75,7 @@ export default {
 }
 
 footer {
+   max-width: 400px;
    width: 100%;
    background-color: @grey;//@secondary-color-light;//;@primary-color-light;
    position: fixed;

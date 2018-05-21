@@ -25,7 +25,7 @@
 <script>
 export default {
    props: {
-      period: String,
+      period: Object,
       next: Function,
       prev: Function
    }
